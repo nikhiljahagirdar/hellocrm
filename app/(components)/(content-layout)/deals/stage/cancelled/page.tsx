@@ -67,7 +67,7 @@ const LostCancelledDeals = () => {
                     <Dropdown.Item>PDF</Dropdown.Item>
                   </SpkDropdown>
                   <SpkButton Buttonvariant="success" Size="sm">
-                    + Add Deal
+                    + 
                   </SpkButton>
                 </div>
               </div>
