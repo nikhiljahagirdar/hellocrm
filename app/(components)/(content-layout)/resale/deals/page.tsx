@@ -34,7 +34,7 @@ const ResaleDeals = () => {
 
       <Row>
         <Col xl={12}>
-          <Card className="custom-card">
+          <Card className="custom-card w-100">
             <Card.Header>
               <div className="d-flex align-items-center justify-content-between w-100">
                 <div className="d-flex align-items-center gap-2">
