@@ -112,7 +112,7 @@ export const MENUITEMS: any = [
     ]
   },
   {
-    title: "Brokers", icon: Svgicons.Usersicon, type: "sub", active: false, selected: false, dirchange: false, children: [
+    title: "Brokers", icon: Svgicons.Teamicon, type: "sub", active: false, selected: false, dirchange: false, children: [
       { path: "/brokers/list", type: "link", active: false, selected: false, dirchange: false, title: "My Brokers" },
       { path: "/brokers/add", type: "link", active: false, selected: false, dirchange: false, title: "Add Broker" },
       { path: "/brokers/commissions", type: "link", active: false, selected: false, dirchange: false, title: "Commissions" },
