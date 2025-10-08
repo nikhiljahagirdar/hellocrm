@@ -50,10 +50,9 @@ const Cover: React.FC<CoverProps> = () => {
             e.preventDefault();
             if (validate()) {
                setShow1(true);
-      setTimeout(() => {
-        router.push("/dashboards/crm/dashboard");
-      }, 2000);
-    }
+               setTimeout(() => {
+                 router.push("/dashboards/crm/dashboard");
+               }, 2000);
             }
         };
 
