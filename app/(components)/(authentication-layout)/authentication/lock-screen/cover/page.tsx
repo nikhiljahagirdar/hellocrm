@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { Fragment, useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
-import { toast, ToastContainer } from "react-toastify";
+import { Toast, ToastContainer } from "react-bootstrap";
 
 interface CoverProps { }
 
@@ -22,7 +22,7 @@ const Cover: React.FC<CoverProps> = () => {
             password: false,
             passwords: false,
         });
-    
+    const [show1, setShow1] = useState(false);
         const handleChange = (e: any) => {
             const { id, value } = e.target;
             setFormData((prev:any) => ({ ...prev, [id]: value }));
@@ -49,15 +49,11 @@ const Cover: React.FC<CoverProps> = () => {
         const handleSubmit = (e: any) => {
             e.preventDefault();
             if (validate()) {
-                router.push('/dashboards/sales');
-                toast.success('Save Password successful', {
-                    position: 'top-right',
-                    autoClose: 1500,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+               setShow1(true);
+      setTimeout(() => {
+        router.push("/dashboards/crm/dashboard");
+      }, 2000);
+    }
             }
         };
 
@@ -139,7 +135,32 @@ const Cover: React.FC<CoverProps> = () => {
                     </div>
                 </Col>
             </Row>
-            <ToastContainer />
+             <ToastContainer className="toast-container position-fixed top-0 end-0 p-3">
+                    <Toast
+                      id="liveToast"
+                      className="toast fade show"
+                      role="alert"
+                      aria-live="assertive"
+                      aria-atomic="true"
+                      onClose={() => setShow1(false)}
+                      show={show1}
+                      delay={3000}
+                      autohide={true}
+                    >
+                      <Toast.Header className="text-white bg-primary">
+                        <Image
+                          className="bd-placeholder-img rounded me-2 w-4 h-4"
+                          src="/assets/images/brand-logos/favicon.ico"
+                          alt="..."
+                          width="24"
+                          height="24"
+                        />
+                        <strong className="me-auto">Unlocked</strong>{" "}
+                        {/* <small>11 mins ago</small> */}
+                      </Toast.Header>
+                      <Toast.Body className="">Screen Unlocked Successfully</Toast.Body>
+                    </Toast>
+                  </ToastContainer>
         </Fragment>
     )
 };

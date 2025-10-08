@@ -21,7 +21,6 @@ const Cover: React.FC<CoverProps> = () => {
   });
 
   const [errors, setErrors] = useState<any>({});
-  const [showToast, setShowToast] = useState<boolean>(false);
   const [show1, setShow1] = useState(false);
   const validate = () => {
     const newErrors: any = {};
@@ -255,10 +254,10 @@ const Cover: React.FC<CoverProps> = () => {
               width="24"
               height="24"
             />
-            <strong className="me-auto">Login</strong>{" "}
+            <strong className="me-auto">Welcome</strong>{" "}
             {/* <small>11 mins ago</small> */}
           </Toast.Header>
-          <Toast.Body className=""> Signin Successfull</Toast.Body>
+          <Toast.Body className="">Login Successful</Toast.Body>
         </Toast>
       </ToastContainer>
     </Fragment>

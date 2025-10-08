@@ -15,10 +15,8 @@ const Footer: React.FC<FooterProps> = () => {
       <footer className="footer mt-auto py-3 text-center">
         <div className="container">
           <span className="text-muted"> Copyright © <span id="year"> 2025 </span> <Link scroll={false}
-            href="#!;" className="text-dark fw-medium">Vyzor</Link>.
-            Designed with <span className="bi bi-heart-fill text-danger"></span> by <Link scroll={false} target='_blank' href="https://spruko.com/">
-              <span className="fw-medium text-primary">Spruko</span>
-            </Link> All
+            href="#!;" className="text-dark fw-medium">Hello CRM</Link>.
+            Designed with <span className="bi bi-heart-fill text-danger"></span> All
             rights
             reserved
           </span>

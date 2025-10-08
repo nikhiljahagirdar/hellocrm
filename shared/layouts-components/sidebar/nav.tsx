@@ -16,6 +16,7 @@ export const MENUITEMS: any = [
   },
   {
     title: "Leads", icon: Svgicons.Crmicon, type: "sub", active: false, selected: false, dirchange: false, children: [
+      { path: "/leads/dashboard", type: "link", active: false, selected: false, dirchange: false, title: "Dashboard" },
       { path: "/leads/list", type: "link", active: false, selected: false, dirchange: false, title: "All Leads" },
       { path: "/leads/stage/new", type: "link", active: false, selected: false, dirchange: false, title: "New" },
       { path: "/leads/stage/contacted", type: "link", active: false, selected: false, dirchange: false, title: "Contacted" },
@@ -49,13 +50,17 @@ export const MENUITEMS: any = [
   },
   {
     title: "Tasks", icon: Svgicons.Taskicon, type: "sub", active: false, selected: false, dirchange: false, children: [
+      { path: "/tasks/dashboard", type: "link", active: false, selected: false, dirchange: false, title: "Dashboard" },
       { path: "/calendar/events", type: "link", active: false, selected: false, dirchange: false, title: "Calendar" },
       { path: "/tasks/list", type: "link", active: false, selected: false, dirchange: false, title: "Tasks" },
       { path: "/reminders/list", type: "link", active: false, selected: false, dirchange: false, title: "Reminders" }
     ]
   },
   {
-    title: "Notes", icon: Svgicons.Blogicon, path: "/notes/list", type: "link", active: false, selected: false, dirchange: false
+    title: "Notes", icon: Svgicons.Blogicon, type: "sub", active: false, selected: false, dirchange: false, children: [
+      { path: "/notes/dashboard", type: "link", active: false, selected: false, dirchange: false, title: "Dashboard" },
+      { path: "/notes/list", type: "link", active: false, selected: false, dirchange: false, title: "Notes" }
+    ]
   },
   {
     title: "Campaigns", icon: Svgicons.Emailicon, type: "sub", active: false, selected: false, dirchange: false, children: [

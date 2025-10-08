@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { Fragment, useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
-import { toast, ToastContainer } from "react-toastify";
+import { Toast, ToastContainer } from "react-bootstrap";
 
 interface CoverProps { }
 
@@ -18,7 +18,7 @@ const Cover: React.FC<CoverProps> = () => {
         password: '',
         showPassword: false
     });
-
+    const [show1, setShow1] = useState(false);
     const [errors, setErrors] = useState<any>({});
 
     const validate = () => {
@@ -41,20 +41,14 @@ const Cover: React.FC<CoverProps> = () => {
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
-    const router = useRouter()
+    const router = useRouter();
     const handleSubmit = (e: any) => {
         e.preventDefault();
         if (validate()) {
-            router.push('/dashboards/sales/');
-            toast.success('Save Password successful', {
-                position: 'top-right',
-                autoClose: 1500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
-            // Handle form submission logic here
+            setShow1(true);
+            setTimeout(() => {
+                router.push("/authentication/sign-in/cover");
+            }, 2000);
         }
     };
 
@@ -165,7 +159,32 @@ const Cover: React.FC<CoverProps> = () => {
                     </div>
                 </Col>
             </Row>
-            <ToastContainer />
+             <ToastContainer className="toast-container position-fixed top-0 end-0 p-3">
+                    <Toast
+                      id="liveToast"
+                      className="toast fade show"
+                      role="alert"
+                      aria-live="assertive"
+                      aria-atomic="true"
+                      onClose={() => setShow1(false)}
+                      show={show1}
+                      delay={3000}
+                      autohide={true}
+                    >
+                      <Toast.Header className="text-white bg-primary">
+                        <Image
+                          className="bd-placeholder-img rounded me-2 w-4 h-4"
+                          src="/assets/images/brand-logos/favicon.ico"
+                          alt="..."
+                          width="24"
+                          height="24"
+                        />
+                        <strong className="me-auto">Account Created</strong>{" "}
+                        {/* <small>11 mins ago</small> */}
+                      </Toast.Header>
+                      <Toast.Body className="">Registration Successful</Toast.Body>
+                    </Toast>
+                  </ToastContainer>
         </Fragment>
     )
 };
