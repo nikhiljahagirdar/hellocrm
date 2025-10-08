@@ -272,33 +272,4 @@ const Cover: React.FC<CoverProps> = () => {
   );
 };
 
-export default Cover;st
-          id="liveToast"
-          className="toast fade show"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-          onClose={() => setShow1(false)}
-          show={show1}
-          delay={3000}
-          autohide={true}
-        >
-          <Toast.Header className="text-white bg-primary">
-            <Image
-              className="bd-placeholder-img rounded me-2 w-4 h-4"
-              src="/assets/images/brand-logos/favicon.ico"
-              alt="..."
-              width="24"
-              height="24"
-            />
-            <strong className="me-auto">Verified</strong>{" "}
-            {/* <small>11 mins ago</small> */}
-          </Toast.Header>
-          <Toast.Body className="">Account Verified Successfully</Toast.Body>
-        </Toast>
-      </ToastContainer>
-    </Fragment>
-  );
-};
-
 export default Cover;
